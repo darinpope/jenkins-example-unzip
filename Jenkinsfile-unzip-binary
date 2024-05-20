@@ -1,0 +1,20 @@
+pipeline {
+  agent any
+  stages {
+    stage('verify installation') {
+      steps {
+        sh 'unzip --help'
+      }
+    }
+    stage('unzip') {
+      steps {
+        sh 'unzip hello.zip'
+      }
+    }
+    stage('cat the file') {
+      steps {
+        sh 'cat hello.txt'
+      }
+    }
+  }
+}

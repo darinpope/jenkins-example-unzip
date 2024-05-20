@@ -1,0 +1,15 @@
+pipeline {
+  agent any
+  stages {
+    stage('unzip') {
+      steps {
+        unzip(zipFile: 'hello.zip')
+      }
+    }
+    stage('cat the file') {
+      steps {
+        sh 'cat hello.txt'
+      }
+    }
+  }
+}
